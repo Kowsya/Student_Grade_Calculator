@@ -18,3 +18,12 @@ def test_grade_fail():
 
 def test_empty_input():
     assert Calculate_grade([]) == "No marks provided"
+
+
+def test_invalid_marks():
+    assert Calculate_grade([110, 90, 80, 70, 60]) == "Invalid marks detected"
+    assert Calculate_grade([-5, 50, 60, 70, 80]) == "Invalid marks detected"
+
+def test_new_grades():
+    assert Calculate_grade([85, 85, 85, 85, 85]) == "A"
+    assert Calculate_grade([45, 45, 45, 45, 45]) == "D"
